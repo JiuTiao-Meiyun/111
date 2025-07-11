@@ -1,2 +1,2 @@
 
-print("你好")          # 输出欢迎语
+print("hello world")          # 输出欢迎语
