@@ -1,10 +1,14 @@
 pipeline {
     agent any
+    environment{
+        IMAGE_NAME="mytst"
+    }
     stages {
-        stage('运行Python') {
+        stage('build docker') {
             steps {
                 // 直接调用系统Python运行脚本
-                bat'python test.py'  // 替换为您的脚本路径
+                bat'docker build -t %IMAGE_NAME%.'  
+                bat'docker run --rm %IMAGE_NAME%'
             }
         }
     }
